@@ -1,0 +1,80 @@
+﻿{
+	"name":"reqs",
+	"children":[
+		{
+		"name":"GET",
+		"children":[
+				{"name":"GET /","size":7},
+				{"name":"GET /1401420498jtun_irev140529019.7z","size":10},
+				{"name":"GET /accountInfo/charm_inc_ranks","size":18551},
+				{"name":"GET /accountInfo/charm_list","size":183},
+				{"name":"GET /accountInfo/find_users","size":299910},
+				{"name":"GET /accountInfo/get","size":3620},
+				{"name":"GET /accountInfo/get_role_list","size":72227},
+				{"name":"GET /accountManager/login","size":2},
+				{"name":"GET /accountinfo/find_users","size":10},
+				{"name":"GET /accountinfo/get_role_list","size":6},
+				{"name":"GET /accountmanager/login","size":1},
+				{"name":"GET /blacklist/get","size":3},
+				{"name":"GET /chatRoom/list","size":21575},
+				{"name":"GET /content/dovebox/list","size":104290},
+				{"name":"GET /content/view","size":165146},
+				{"name":"GET /cs/list","size":6237},
+				{"name":"GET /friend/get","size":9811},
+				{"name":"GET /friend/getOnlineFriends","size":1423},
+				{"name":"GET /friend/requests","size":91},
+				{"name":"GET /inner/manage/content/list","size":648},
+				{"name":"GET /inner/manage/user/get_users","size":18},
+				{"name":"GET /inner/manage/user/search_user","size":15},
+				{"name":"GET /music/list","size":135723},
+				{"name":"GET /notify/unread","size":640932},
+				{"name":"GET /online/charm","size":312},
+				{"name":"GET /orga/list","size":165},
+				{"name":"GET /present/account_presents","size":15072},
+				{"name":"GET /present/check_presents","size":1263},
+				{"name":"GET /present/list","size":18608},
+				{"name":"GET /present/logs","size":9881},
+				{"name":"GET /present/view","size":967},
+				{"name":"GET /user/money","size":7253},
+				{"name":"GET /user/profile","size":15023},
+				{"name":"GET /user/setting","size":4},
+				{"name":"GET /user/space","size":445583},
+				{"name":"GET http://api.nyx.l99.com/notify/unread","size":1804}
+			]
+		},
+		{
+		"name":"HEAD",
+		"children":[
+				{"name":"HEAD /1401420498jtun_irev140529019.7z","size":6},
+				{"name":"HEAD /notify/unread","size":1}
+			]
+		},
+		{
+		"name":"POST",
+		"children":[
+				{"name":"POST /accountInfo/save_info","size":12008},
+				{"name":"POST /accountInfo/update_user_favor","size":4},
+				{"name":"POST /accountManager/get_login_confirm","size":3},
+				{"name":"POST /accountManager/login","size":11846},
+				{"name":"POST /blacklist/manager","size":1},
+				{"name":"POST /content/dovebox/post","size":1948},
+				{"name":"POST /content/hotspot","size":29},
+				{"name":"POST /content/share/charm","size":1081},
+				{"name":"POST /cs/sendMessage","size":952},
+				{"name":"POST /cs/sendblock","size":63},
+				{"name":"POST /file/roi_upload","size":1},
+				{"name":"POST /file/upload","size":1415},
+				{"name":"POST /friend/add","size":68},
+				{"name":"POST /friend/handle","size":837},
+				{"name":"POST /inner/manage/content/block","size":90},
+				{"name":"POST /inner/manage/user/block","size":28},
+				{"name":"POST /inner/manage/user/change_avatar","size":25},
+				{"name":"POST /online/charm","size":47143869},
+				{"name":"POST /present/give","size":17188},
+				{"name":"POST /user/setting","size":14708},
+				{"name":"POST /user/uploadavatar","size":5218},
+				{"name":"POST http://api.nyx.l99.com/online/charm","size":1}
+			]
+		}
+	]
+}

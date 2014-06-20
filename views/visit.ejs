@@ -1,0 +1,108 @@
+<%- include header_p%>
+<%- include calendar%>
+			//console.log(d3.time.format("%Y%m%d_%H:%M").parse("20140618_00:24"))
+			var  dataset;
+			var parseDate = d3.time.format("%Y%m%d_%H:%M").parse;//定义时间格式
+			d3.csv("/data/<%- file%>", function (data){
+				dataset = data;
+				data.forEach(function (d){
+						d.time = parseDate(d.date);//将数据中的时间进行格式化
+						//console.log(d.time)
+				})
+				//添加svg
+				var w = 2000;
+				var  h = 500;
+
+
+					//添加比例尺
+				     var xscale = d3.scale.linear()
+						.domain([0,dataset.length])
+						.range([0, w]);
+					var  yscale = d3.scale.linear()
+							 .domain([0, d3.max(dataset, function (d) { return parseFloat(d.Num); })])
+							 .range([h , 0]);
+
+				   //创建svg的条形图
+				   var padding=0
+				   var svg = d3.select("body")
+											.append("svg")
+											.attr("width", w+80)
+											.attr("height", h+300)
+					svg.selectAll("rect")
+						   .data(dataset)
+						   .enter()
+						   .append("rect")
+						   .attr("x", function (d,i){
+									return i*(w/dataset.length)+80;
+						   })
+						   .attr("y", function (d){
+									return yscale(d.Num)+80;})
+						   .attr("width", w/dataset.length )
+						   .attr("fill", "teal")
+						   .on("mouseover", function () {
+									d3.select( this)
+										 .attr("fill", "orange");
+							})
+							.on("mouseout", function (d) {
+								 d3.select(this)
+									  .transition()
+									  .duration(250)
+									  .attr("fill", "teal");
+							})
+
+						   .attr("height", function (d){
+								return h-yscale(d.Num);
+						   })
+						   .append("title")
+						   .text(function (d) {
+								 return  d3.time.format('%m-%d %H:%M')(d.time)+" Reqs' num : "+d.Num;
+						   });
+
+
+					//添加坐标轴
+
+					var x = d3.time.scale().range([0, w]);
+					var y = d3.scale.linear().range([h, 0]);
+					x.domain(d3.extent(data,function (d){return d.time;}));
+					y.domain([0,d3.max(data,function(d){return parseFloat(d.Num);})]);
+
+					var xAxis = d3.svg.axis()
+												.scale(x)
+												.ticks(24)
+												.orient("bottom");
+
+					var  yAxis = d3.svg.axis()
+												  .scale(y)
+												  .orient("left")
+												  .ticks(10);
+					//为坐标轴自定义刻度标签
+					var valueline = d3.svg.line()
+										  .x(function (d){return d.time;})
+    									  .y(function (d){return d.Num;});
+					svg.append("text")
+						   .attr("transform","translate("+(w/2)+","+(h+120)+")")
+						   .attr("text-anchor","middle")
+						   .text("Time");
+					svg.append("text")
+						   .attr("transform","translate("+(w/2)+","+(50)+")")
+						   .attr("text-anchor","middle")
+						   .attr("font-size","60px")
+						   .text("<%- month%>-<%- day%>'s Reqs of <%- title%>");
+					svg.append("text")
+						   .attr("transform","translate("+(15)+","+(h/2)+"),rotate(-90)")
+						  // .attr("transform","rotate(-90)")
+						   .attr("text-anchor","middle")
+						   .text("Reqs");
+					svg.append("g")
+							.attr("class", "axis")
+							.attr("transform","translate(80," + (h+79) +")")
+							.call(xAxis);
+					svg.append("g")
+							.attr("class", "axis")
+							.attr("transform", "translate(80, +79)")
+							.call(yAxis);
+
+			});
+
+		</script>
+<%- include footer%>
