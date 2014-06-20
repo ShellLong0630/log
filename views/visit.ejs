@@ -11,7 +11,7 @@
 				})
 				//添加svg
 				var w = 1200;
-				var  h = 500;
+				var  h = 400;
 
 
 					//添加比例尺
@@ -97,7 +97,8 @@
 							.attr("class", "axis")
 							.attr({
 								fill:"none",
-								"stroke":"black"
+								"stroke":"black",
+								"font-size":"12px"
 							})
 							.attr("transform","translate(80," + (h+79) +")")
 							.call(xAxis);
@@ -105,7 +106,8 @@
 							.attr("class", "axis")
 							.attr({
 								fill:"none",
-								"stroke":"black"
+								"stroke":"black",
+								"font-size":"12px"
 							})
 							.attr("transform", "translate(80, +79)")
 							.call(yAxis);
