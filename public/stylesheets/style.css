@@ -5,36 +5,10 @@ http://www.freecsstemplates.org
 Released for free under a Creative Commons Attribution 3.0 License
 */
 
-circle {
-  fill: rgb(31, 119, 180);
-  fill-opacity: .25;
-  stroke: rgb(31, 119, 180);
-  stroke-width: 1px;
-}
-
-.leaf circle {
-  fill: #ff7f0e;
-  fill-opacity: 1;
-}
-
-text {
-  font: 10px sans-serif;
-}
-.axis path,
-.axis line {
-	fill: none;
-	stroke: black;
-	shape-rendering: crispEdges;
-}
-.axis text {
-	font-family: sans-serif;
-	font-size: 11px;
-}
-
 body {
 	margin: 0;
 	padding: 0;
-	background: #D0D0D0 url(../images/wrapper-bg1.png) repeat-x;
+	background: #D1EDC9 url(../images/wrapper-bg1.png) repeat-x;
 	font-family: 'Abel', sans-serif;
 	font-size: 16px;
 	color: #414141;

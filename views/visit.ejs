@@ -10,7 +10,7 @@
 						//console.log(d.time)
 				})
 				//添加svg
-				var w = 2000;
+				var w = 1200;
 				var  h = 500;
 
 
@@ -26,7 +26,7 @@
 				   var padding=0
 				   var svg = d3.select("body")
 											.append("svg")
-											.attr("width", w+80)
+											.attr("width", w+300)
 											.attr("height", h+300)
 					svg.selectAll("rect")
 						   .data(dataset)
@@ -86,7 +86,7 @@
 					svg.append("text")
 						   .attr("transform","translate("+(w/2)+","+(50)+")")
 						   .attr("text-anchor","middle")
-						   .attr("font-size","60px")
+						   .attr("font-size","30px")
 						   .text("<%- month%>-<%- day%>'s Reqs of <%- title%>");
 					svg.append("text")
 						   .attr("transform","translate("+(15)+","+(h/2)+"),rotate(-90)")
@@ -95,10 +95,18 @@
 						   .text("Reqs");
 					svg.append("g")
 							.attr("class", "axis")
+							.attr({
+								fill:"none",
+								"stroke":"black"
+							})
 							.attr("transform","translate(80," + (h+79) +")")
 							.call(xAxis);
 					svg.append("g")
 							.attr("class", "axis")
+							.attr({
+								fill:"none",
+								"stroke":"black"
+							})
 							.attr("transform", "translate(80, +79)")
 							.call(yAxis);
 
